@@ -7,8 +7,8 @@ class header extends Component {
         <div className="imgBanner">
           <h3 className="search-title">Have a Question?</h3>
           <p className="search-tag-line">If you have any question signup to ask or search for what you are looking for!</p>
-          <form autocomplete="off" method="get" className="search-form clearfix" id="search-form">
-            <input type="text" id="myInput" placeholder="Type your search terms here" className="search-term " autocomplete="off"></input>
+          <form method="get" className="search-form clearfix" id="search-form">
+            <input type="text" id="myInput" placeholder="Type your search terms here" className="search-term "></input>
             <input type="submit" value="Search" className="search-btn"></input>
             <ul id="myUL">
                
