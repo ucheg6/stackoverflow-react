@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class navbar extends Component {
   render() {
     return (
+      <Router>
       <div className="topnav" id="myTopnav">
         <div className=" Navbar_Link-brand ">
-          <a href="index.html" id="logoo">StackOverflow-lite®</a>
+          <Link to="index.html">StackOverflow-lite®</Link>
         </div>
         <div className="nav" className="topnav" id="myTopnav">
           <a href="dashboard.html">PROFILE</a>
@@ -16,6 +18,7 @@ class navbar extends Component {
           </a>
         </div>
       </div>
+      </Router>
     )
   }
 }
