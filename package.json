@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/ucheg6/stackoverflow-react#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
+    "react-spinners": "^0.4.7",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
