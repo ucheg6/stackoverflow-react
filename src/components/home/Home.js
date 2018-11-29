@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from "react-router-dom";
-import Header from './header';
+import './home.css';
 
-import { fetchRecentQuestions } from '../actions/recentQuestionsAction';
-import formatTime from '../helpers/timeFormater';
+import Header from '../header';
+import { fetchRecentQuestions } from '../../actions/recentQuestionsAction';
+import formatTime from '../../helpers/timeFormater';
 class Home extends Component {
 constructor(props){
     super(props);
