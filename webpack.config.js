@@ -26,7 +26,6 @@ module.exports = {
   },
   
   devServer: {
-    // outputPath: buildPath,
     historyApiFallback: true,
   },
   

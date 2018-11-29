@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import NotFound from './components/NotFound';
 import SingleQuestion from './components/singleQuestion';
-
+import Signup from './components/signup/Signup';
+import Signin from './components/signin/Signin';
 
 
 const Routes = () => (
@@ -15,8 +16,9 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route exact path="/home" component={Home} />
       <Route path="/not-found" component={NotFound} />
+      <Route path="/signup" component={Signup} />
       <Route path="/question/:id" component={SingleQuestion} />
-
+      <Route path="/signin" component={Signin} />
       <Redirect to="/" />
     </Switch>
     <Footer />
