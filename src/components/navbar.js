@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class navbar extends Component {
   render() {
@@ -10,7 +10,7 @@ class navbar extends Component {
           </div>
           <div className="nav" className="topnav" id="myTopnav">
             <a href="dashboard.html">PROFILE</a>
-            <a href="login.html">LOGIN</a>
+            <a href="/signin">LOGIN</a>
             <Link to='/signup'>SIGNUP</Link>
             <a href="#" className="icon">
               <i className="fa fa-bars"></i>
