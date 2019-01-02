@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ucheg6/stackoverflow-react#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "font-awesome": "^4.7.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-redux": "^5.1.1",

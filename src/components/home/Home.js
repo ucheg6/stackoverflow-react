@@ -7,11 +7,12 @@ import './home.css';
 import Header from '../header';
 import { fetchRecentQuestions } from '../../actions/recentQuestionsAction';
 import formatTime from '../../helpers/timeFormater';
+import MostPopular from '../mostPopularQuestion/MostPopular';
 class Home extends Component {
-constructor(props){
-    super(props);
-    this.state={}
-}
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
     componentDidMount() {
         this.props.fetchRecentQuestions();
     }
@@ -73,9 +74,10 @@ constructor(props){
                         }
                     </div>
                 </div>
-
+                <MostPopular />
             </div>
         )
+
     }
 
 }

@@ -3,13 +3,9 @@ import { Provider } from 'react-redux';
 import store from './helpers/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './routes';
-// import updateUserState from './helpers/updateUserState';
-
+import 'font-awesome/css/font-awesome.min.css';
 import './styles/App.css';
 
-
-// window.store = store;
-// updateUserState(store);
 class App extends Component {
     render() {
         return (
