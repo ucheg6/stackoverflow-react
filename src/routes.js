@@ -4,7 +4,7 @@ import Home from './components/home/Home';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import NotFound from './components/NotFound';
-import SingleQuestion from './components/singleQuestion';
+import SingleQuestion from './components/singleQuestion/singleQuestion';
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
 

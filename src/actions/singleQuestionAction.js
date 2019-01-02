@@ -1,41 +1,55 @@
-import { FETCH_SINGLE_QUESTION } from  './types';
+import {
+  FETCH_SINGLE_QUESTION_REQUEST,
+  FETCH_SINGLE_QUESTION_FAILURE,
+  FETCH_SINGLE_QUESTION_SUCCESS,
+} from './types';
 import axios from 'axios';
 
-export const singleQuestionAction = (token) => {
+export const singleQuestionAction = (data) => {
   return {
-    type: FETCH_SINGLE_QUESTION,
-    payload: token
+    type: FETCH_SINGLE_QUESTION_SUCCESS,
+    payload: data
   }
 };
 
 export const singleQuestionError = (error) => {
   return {
-    type: FETCH_SINGLE_QUESTION,
+    type: FETCH_SINGLE_QUESTION_FAILURE,
     payload: error
   }
 };
 
-export const fetchSingleQuestion=(id)=>{
-    return dispatch => {
-    dispatch(singleQuestionError(null));
-    dispatch(singleQuestionAction({ accessToken: {} }));
-    return axios.get(`https://stackoverflow-litee.herokuapp.com/api/v1/questions/${id}`)
+export const singleQuestionRequest = (fetching) => {
+  return {
+    type: FETCH_SINGLE_QUESTION_REQUEST,
+    payload: fetching
+  }
+};
+
+export const fetchSingleQuestion = (id) => {
+  return dispatch => {
+    dispatch(singleQuestionRequest({ fetching: true }));
+    dispatch(singleQuestionError({error: {} }));
+    dispatch(singleQuestionAction({data: {} }));
+    return axios.get(`https://stackoverflow-litee.herokuapp.com/api/v1/questions/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('userToken')}`
+      }
+    })
       .then(response => {
         if (response) {
-            console.log(response);
-          const { data: { access_token} } = response;
-        dispatch(singleQuestionAction({accessToken:access_token }));
-
+          const  { data }  = response;
+          dispatch(singleQuestionRequest({ fetching: false }));
+          dispatch(singleQuestionAction({data}));
         }
       }).catch(error => {
-        const { response: { data: {code, message } } } = error;
+        const { response: { data: { message } } } = error;
+        dispatch(singleQuestionRequest({ fetching: false }));
         dispatch(singleQuestionError({
-          error:{
-              message
+          error: {
+            message
           }
         }));
       });
   }
 }
-
-
