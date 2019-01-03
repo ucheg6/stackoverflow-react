@@ -36,12 +36,18 @@ class MostPopular extends Component {
           {
             this.props.popularQuestions.map((questions) => {
 
-              const { questionid, answersnumber, questionbody } = questions
+              const { questionid, questiontopic, answersnumber, questionbody } = questions
               return (
 
                 < div className = "feed-item" id = "mostAnswers" key={questionid} >
 
                   <div className="post-body">
+                  <div className="post-title">
+                <span className="user-name" style={{"marginLeft": "-30px"}} id="author_name">
+                 Topic: {questiontopic}
+                </span>
+              </div>
+          
                     <div className="article-title">
                       {questionbody}
                     </div>

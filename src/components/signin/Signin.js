@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { login } from '../../actions/loginAction';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import './signin.css';
+import './signin.css';
 class Signin extends Component {
   constructor(props) {
     super(props)
@@ -34,8 +34,8 @@ class Signin extends Component {
     return (
       <div className="form-container ">
         <ToastContainer />
-        <form id='login-form' action="" method='post'>
-          <h2> Log In</h2>
+        <form>
+          <h1> Log In</h1>
           <hr />
           <label><b>Email:</b></label>
           <input id="email" onChange={this.handleChange} type="text" name="email" placeholder=" Email" />
@@ -52,6 +52,7 @@ class Signin extends Component {
         </form>
 
       </div>
+      
 
     )
   }
