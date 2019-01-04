@@ -21,7 +21,8 @@ import {
   
       case FETCH_USER_QUESTIONS_FAILURE:
         return { ...state, error: action.payload, fetching: false };
-     
+     case 'UPDATE_USER_QUESTIONS':
+     return { ...state, questions: [action.payload, ...state.questions]}
     }
     return state;
     

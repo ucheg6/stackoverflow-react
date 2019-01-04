@@ -5,6 +5,7 @@ import singleQuestionReducer from './singleQuestionReducer';
 import mostPopularReducer from './mostPopularReducer';
 import dashboardReducer from './dashboardReducer';
 import userQuestionsReducer from './userQuestionsReducer';
+import postQuestionReducer from './postQuestionReducer';
 
 export default combineReducers({
     recentQuestions: recentQuestionsReducer,
@@ -13,4 +14,5 @@ export default combineReducers({
     popularQuestions: mostPopularReducer,
     user: dashboardReducer,
     userQuestions: userQuestionsReducer,
+    postQuestion: postQuestionReducer,
 });

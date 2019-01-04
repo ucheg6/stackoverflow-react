@@ -93,11 +93,11 @@ export const login = (userDetails, history) => {
       .then(response => {
         dispatch(requestSignin({ isRequesting: false }));
         if (response) {
-         const { data: { user, token } } = response;
+         const { data: { user, token, userid } } = response;
         console.log(response);
           dispatch(signinAction({ user: userInfo }));
-          //notify.success(`Welcome ${user}`);
           localStorage.setItem('userToken', token);
+          localStorage.setItem('username', user);
           history.push('/home')
         }
       })

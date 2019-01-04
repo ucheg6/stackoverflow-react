@@ -11,7 +11,6 @@ const notify = {
   error: (message) => {
     toast.error(message, {
       hideProgressBar: false,
-      position: toast.POSITION.TOP_CENTER,
       transition: Slide,
       autoClose: 2000,
     });
