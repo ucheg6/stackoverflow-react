@@ -7,7 +7,7 @@ import NotFound from './components/NotFound';
 import SingleQuestion from './components/singleQuestion/singleQuestion';
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
-
+import Dashboard from './components/dashboard/Dashboard';
 
 const Routes = () => (
   <div>
@@ -19,6 +19,7 @@ const Routes = () => (
       <Route path="/signup" component={Signup} />
       <Route path="/question/:id" component={SingleQuestion} />
       <Route path="/signin" component={Signin} />
+      <Route path="/dashboard" component={Dashboard} />
       <Redirect to="/" />
     </Switch>
     <Footer />

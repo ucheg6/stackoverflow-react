@@ -9,8 +9,8 @@ class navbar extends Component {
             <Link to={'/'}>StackOverflow-lite®</Link>
           </div>
           <div className="nav" className="topnav" id="myTopnav">
-            <a href="dashboard.html">PROFILE</a>
-            <a href="/signin">LOGIN</a>
+            <Link to="/dashboard">PROFILE</Link>
+            <Link to="/signin">LOGIN</Link>
             <Link to='/signup'>SIGNUP</Link>
             <a href="#" className="icon">
               <i className="fa fa-bars"></i>
