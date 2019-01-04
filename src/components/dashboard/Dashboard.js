@@ -4,21 +4,30 @@ import { bindActionCreators } from 'redux';
 import './dashboard.css';
 import { fetchUserProfile } from '../../actions/dashboardAction';
 import UserQuestions from './UserQuestions';
+import Modal from '../Modal';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+    this.displayModal = this.displayModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUserProfile();
   }
+  closeModal() {
+    const modal = this.refs.modal;
+    modal.style.display = 'none';
+  }
+  displayModal() {
+    const modal = this.refs.modal;
+    modal.style.display = 'block';
+  }
 
   render() {
     const { user } = this.props.user;
-    user && console.log(user[0].fullname);
-
     return (
       <div>
         <div className="dashboard">
@@ -103,7 +112,7 @@ class Dashboard extends Component {
               <h1>Activity Feed</h1>
 
               <div className="action">
-                <button id="postQuestion">
+                <button id="postQuestion" onClick={this.displayModal}>
                   Post Questions
           </button>
               </div>
@@ -148,31 +157,13 @@ class Dashboard extends Component {
         </div>
         <div id="p-page-wrap">
 
-          <UserQuestions/>
-
-        <div id="entryModal" className="modal">
-
-          <div className="modal-content">
-            <div className="modal-header">
-              <span className="close">&times;</span>
-              <h3>Ask your Question</h3>
-            </div>
-            <div className="modal-body">
-              <form className="edit_form">
-                <div className="form_group">
-                  <label>Question Title</label>
-                  <input id="questionTopic" type="text" placeholder="Entry Title" />
-                </div>
-                <div className="form_group">
-                  <label>Question Body</label>
-                  <textarea id="questionBody" rows="10" cols="100" className="form-control"></textarea>
-                </div>
-                <button id="submitQuestion" className="btn btn-blue fa fa-share-square">Add Question</button>
-              </form>
-            </div>
+          <UserQuestions />
+          <div ref="modal" id="entryModal" className="modal">
+            <Modal close={this.closeModal} />
           </div>
+
+
         </div>
-      </div>
       </div >
     )
   }

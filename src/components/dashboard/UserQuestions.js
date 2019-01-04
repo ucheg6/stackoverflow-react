@@ -13,7 +13,6 @@ class UserQuestions extends Component {
 
   componentDidMount() {
     this.props.fetchUserQuestions();
-    console.log(this.props.UserQuestions);
   }
 
   render() {
@@ -30,7 +29,7 @@ class UserQuestions extends Component {
 
         <div className="p-feed" >
           {
-            this.props.userQuestions && this.props.userQuestions.map((questions) => {
+            this.props.userQuestions && this.props.userQuestions.reverse().map((questions) => {
 
               const { fullname, questionid, questiontopic, answersnumber, questionbody, created_at } = questions
               return (
