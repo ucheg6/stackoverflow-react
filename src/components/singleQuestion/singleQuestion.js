@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { fetchSingleQuestion } from '../../actions/singleQuestionAction';
 import formatTime from '../../helpers/timeFormater';
 import AnswersCard from '../answerCards/AnswerCards';
+import AnswerBox from '../answerCards/AnswerBox';
+
 import './singleQuestion.css';
 
 class SingleQuestion extends Component {
@@ -15,7 +17,7 @@ class SingleQuestion extends Component {
 
   render() {
     const { data } = this.props.singleQuestion;
-    data && data.data && console.log('this data in', data)
+    const id = data && data.data && data.data[0].questionid
 
     return (
       <div id="questionsResult" className="s-main-col">
@@ -36,6 +38,7 @@ class SingleQuestion extends Component {
                 {data && data.data && data.data[0].questionbody}
               </div>
               {data && data.answers &&  <AnswersCard answers={data.answers}/> }
+              <AnswerBox questionid={id}/>
             </div>
           </div>
         </div>
