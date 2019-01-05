@@ -97,7 +97,7 @@ form p {
  float: right
 }
 
-button {
+.signupbtn {
     background-color: #3b8beb;
     color: white;
     padding: 14px 20px;
