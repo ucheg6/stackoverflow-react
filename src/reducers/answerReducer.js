@@ -17,7 +17,7 @@ const postAnswerReducer = (state = initialState, action) => {
             return { ...state, posting: true };
 
         case POST_ANSWER_SUCCESS:
-            return { ...state, ANSWER: action.payload, posting: false };
+            return { ...state, answer: action.payload, posting: false };
 
         case POST_ANSWER_FAILURE:
             return { ...state, error: action.payload, posting: false };

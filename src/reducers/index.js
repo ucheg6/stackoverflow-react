@@ -7,6 +7,7 @@ import dashboardReducer from './dashboardReducer';
 import userQuestionsReducer from './userQuestionsReducer';
 import postQuestionReducer from './postQuestionReducer';
 import postAnswerReducer from './answerReducer';
+import commentsReducer from './commentsReducer';
 
 export default combineReducers({
     recentQuestions: recentQuestionsReducer,
@@ -17,4 +18,5 @@ export default combineReducers({
     userQuestions: userQuestionsReducer,
     postQuestion: postQuestionReducer,
     postAnswer: postAnswerReducer,
+    postComments: commentsReducer,
 });
