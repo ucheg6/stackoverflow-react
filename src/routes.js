@@ -8,6 +8,7 @@ import SingleQuestion from './components/singleQuestion/singleQuestion';
 import Signup from './components/signup/Signup';
 import Signin from './components/signin/Signin';
 import Dashboard from './components/dashboard/Dashboard';
+import Comments from './components/comment/Comments';
 
 const Routes = () => (
   <div>
@@ -20,6 +21,7 @@ const Routes = () => (
       <Route path="/question/:id" component={SingleQuestion} />
       <Route path="/signin" component={Signin} />
       <Route path="/dashboard" component={Dashboard} />
+      <Route exact path="/comments/:id" component={Comments} />
       <Redirect to="/" />
     </Switch>
     <Footer />
