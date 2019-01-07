@@ -27,12 +27,13 @@ class Home extends Component {
                                 Recent Questions
                         </li>
                         </ul>
+                       
                     </div>
 
                     <div className="feed">
 
                         {
-                            this.props.recentQuestions.map((questions) => {
+                           this.props.recentQuestions.slice(0,7).map((questions) => {
 
                                 const { questionid, userid, fullname, questiontopic, questionbody, created_at } = questions
 
@@ -63,8 +64,11 @@ class Home extends Component {
                                         <div className="feed-item-actions">
                                             <ul className="action-buttons">
                                                 <li className="button" id="button-up">
+                                                {localStorage.getItem('userToken') ?
                                                     <Link to={`question/${questionid}`}>
-                                                        <i className="fa fa-share-square"></i> View Question </Link>
+                                                        <i className="fa fa-share-square"></i> View Question </Link> :
+                                                   <Link to={`/signin`}>
+                                                <i className="fa fa-share-square"></i> View Question </Link> }    
                                                 </li>
                                             </ul>
                                         </div>
@@ -83,7 +87,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-    recentQuestions: state.recentQuestions.questions
+    recentQuestions: state.recentQuestions.questions,
 });
 
 const mapDispatchToProps = (dispatch) => {

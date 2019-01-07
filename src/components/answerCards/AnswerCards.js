@@ -8,7 +8,7 @@ import AcceptAnswer from './AcceptAnswer';
 const AnswersCard = ({ answers, questionid }) => {
   
     return (
-      answers.length === 0 ? 'Be the first to answer this question!' :
+       answers.length === 0 ? 'Be the first to answer this question!' :
             answers.map((answer) => {
               return (
                 <div key={answer.answerid}>
