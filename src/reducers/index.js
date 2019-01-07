@@ -9,6 +9,7 @@ import postQuestionReducer from './postQuestionReducer';
 import postAnswerReducer from './answerReducer';
 import commentsReducer from './commentsReducer';
 import votesReducer from './votesReducer';
+import acceptAnswerReducer  from './acceptAnswerReducer';
 
 export default combineReducers({
     recentQuestions: recentQuestionsReducer,
@@ -21,4 +22,5 @@ export default combineReducers({
     postAnswer: postAnswerReducer,
     postComments: commentsReducer,
     votes: votesReducer,
+    answer: acceptAnswerReducer,
 });

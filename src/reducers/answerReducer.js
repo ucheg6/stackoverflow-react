@@ -1,7 +1,7 @@
 import {
     POST_ANSWER_REQUEST,
     POST_ANSWER_SUCCESS,
-    POST_ANSWER_FAILURE
+    POST_ANSWER_FAILURE,
 } from '../actions/types';
 
 const initialState = {
