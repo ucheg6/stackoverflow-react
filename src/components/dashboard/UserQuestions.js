@@ -2,17 +2,24 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from "react-router-dom";
-import { fetchUserQuestions } from '../../actions/userQuestionsAction';
+import { fetchUserQuestions, deleteUserQuestions } from '../../actions/userQuestionsAction';
 import formatTime from '../../helpers/timeFormater';
 
 class UserQuestions extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+    this.deleteQuestion = this.deleteQuestion.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchUserQuestions();
+  }
+  
+  deleteQuestion(event, id) {
+    event.preventDefault();
+    console.log(event, id)
+    this.props.deleteUserQuestions(id);
   }
 
   render() {
@@ -62,8 +69,8 @@ class UserQuestions extends Component {
                       <ul className="action-buttons">
 
                         <li className="button" id="button-up">
-                          <a href="dashboard.html?id=${questionid}">
-                            <i className="fa fa-trash" data-id="${questionid}"></i> Delete </a>
+                          <a href="" onClick={() => this.deleteQuestion(event, questionid)}>
+                            <i className="fa fa-trash"></i> Delete </a>
                         </li>
                         <li className="button" id="button-up">
                           <Link to={`question/${questionid}`}>
@@ -92,6 +99,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchUserQuestions }, dispatch);
+  return bindActionCreators({ fetchUserQuestions, deleteUserQuestions }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(UserQuestions);

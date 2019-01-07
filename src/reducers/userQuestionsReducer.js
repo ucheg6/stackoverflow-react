@@ -1,7 +1,7 @@
 import { 
     FETCH_USER_QUESTIONS_REQUEST,
     FETCH_USER_QUESTIONS_SUCCESS,
-    FETCH_USER_QUESTIONS_FAILURE
+    FETCH_USER_QUESTIONS_FAILURE,
    } from '../actions/types';
   
   const initialState = {
@@ -23,6 +23,11 @@ import {
         return { ...state, error: action.payload, fetching: false };
      case 'UPDATE_USER_QUESTIONS':
      return { ...state, questions: [action.payload, ...state.questions]}
+     case 'DELETE_USER_QUESTIONS_SUCCESS':
+     return { 
+       ...state,
+       questions: state.questions.filter((question) => question.questionid !== action.payload)
+      }
     }
     return state;
     
