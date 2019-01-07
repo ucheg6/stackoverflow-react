@@ -4,6 +4,7 @@ import {
   FETCH_SINGLE_QUESTION_SUCCESS,
 } from './types';
 import axios from 'axios';
+import notify from '../helpers/notify';
 
 export const singleQuestionAction = (data) => {
   return {
@@ -50,6 +51,7 @@ export const fetchSingleQuestion = (id) => {
             message
           }
         }));
+        notify.error(message);
       });
   }
 }

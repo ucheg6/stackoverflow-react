@@ -9,6 +9,8 @@ const notify = {
     });
   },
   error: (message) => {
+    message = message === 'Your Token is invalid' ? 'You need to login first' : message;
+
     toast.error(message, {
       hideProgressBar: false,
       transition: Slide,

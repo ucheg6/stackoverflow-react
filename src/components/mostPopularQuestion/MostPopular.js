@@ -34,7 +34,7 @@ class MostPopular extends Component {
 
         <div id="mostAnswered">
           {
-            this.props.popularQuestions.map((questions) => {
+            this.props.popularQuestions.slice(0,7).map((questions) => {
 
               const { questionid, questiontopic, answersnumber, questionbody } = questions
               return (
@@ -55,9 +55,14 @@ class MostPopular extends Component {
                   <div className="feed-item-actions">
                     <ul className="action-buttons">
                       <li className="button" id="button-up">
+                      {localStorage.getItem('userToken') ?
                       <Link to={`question/${questionid}`}>
                           <i className="fa fa-share-square"></i>&nbsp;
-                           {answersnumber} Answers </Link>
+                           {answersnumber} Answers </Link>:
+                           <Link to={`/signin`}>
+                           <i className="fa fa-share-square"></i>&nbsp;
+                            {answersnumber} Answers </Link>
+                           }
                       </li>
                     </ul>
                   </div>

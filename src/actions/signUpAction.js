@@ -100,7 +100,6 @@ export const signup = (userDetails, history) => {
         if (response) {
           const { data: { user } } = response;
           dispatch(signupAction({ user: userInfo }));
-          // notify.success(`Welcome ${user.fullName}`);
           history.push('/signin')
         }
       })

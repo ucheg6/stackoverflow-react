@@ -547,7 +547,10 @@ button a {
   }  
   
 }
-
+loading-icon {
+  color: #E47E08;
+  text-align: center;
+}
 
 /* for responsive navbar */
 .topnav .icon {

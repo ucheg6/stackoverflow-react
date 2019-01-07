@@ -17,6 +17,8 @@ class SingleQuestion extends Component {
 
   render() {
     const { data } = this.props.singleQuestion;
+    const { fetching } = this.props;
+    console.log(fetching);
     const id = data && data.data && data.data[0].questionid
 
     return (
@@ -37,7 +39,7 @@ class SingleQuestion extends Component {
               <div className="s-article-title" id="s-question_body">
                 {data && data.data && data.data[0].questionbody}
               </div>
-              {data && data.answers &&  <AnswersCard answers={data.answers} questionid={id}/> }
+              { data && data.answers &&  <AnswersCard answers={data.answers} questionid={id}/> }
               <AnswerBox questionid={id}/>
             </div>
           </div>
@@ -47,7 +49,8 @@ class SingleQuestion extends Component {
 }
 
 const mapStateToProps = state => ({
-  singleQuestion: state.singleQuestion.question
+  singleQuestion: state.singleQuestion.question,
+  fetching: state.singleQuestion.fetching
 
 });
 

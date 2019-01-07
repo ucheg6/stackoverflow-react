@@ -36,9 +36,9 @@ class UserQuestions extends Component {
 
         <div className="p-feed" >
           {
-            this.props.userQuestions && this.props.userQuestions.reverse().map((questions) => {
+            this.props.userQuestions && this.props.userQuestions.slice(0,6).reverse().map((questions) => {
 
-              const { fullname, questionid, questiontopic, answersnumber, questionbody, created_at } = questions
+              const { fullname, questionid, questionbody, created_at } = questions
               return (
                 <div className="p-feed" key={questionid}>
                   <div className="p-feed-item">

@@ -88,7 +88,6 @@ export const postQuestion = (questionDetails) => {
         topic,
       question,
       }
-   console.log(questionInfo)
     return axios.post('https://stackoverflow-litee.herokuapp.com/api/v1/questions', {
       questionTopic: questionDetails.topic,
       questionBody: questionDetails.question
