@@ -1,9 +1,12 @@
 import React from 'react'
 import formatTime from '../../helpers/timeFormater';
 import { Link } from "react-router-dom";
+import Upvotes from './Upvotes';
+import Downvotes from './Downvotes';
 
-const AnswersCard = ({ answers }) => {
 
+const AnswersCard = ({ answers, questionid }) => {
+  
     return (
       answers.length === 0 ? 'Be the first to answer this question!' :
             answers.map((answer) => {
@@ -27,14 +30,8 @@ const AnswersCard = ({ answers }) => {
                </div>
                <div className="s-feed-item-actions">
                  <ul className="action-buttons">
-                   <li className="button" id="button-up">
-                     <i className="fa fa-thumbs-up" id="upvoter" data-id="${answerid}"></i>
-                     &nbsp; {answer.upvotes}
-         </li>
-                   <li className="button" id="button-up" >
-                     <i className="fa fa-thumbs-down" id="downvoter"></i>
-                     &nbsp; {answer.downvotes} 
-         </li>
+                  <Upvotes upvotes={answer.upvotes} answerid={answer.answerid} id={questionid}/>
+                  <Downvotes downvotes={answer.downvotes} answerid={answer.answerid} id={questionid}/>
                    <li className="button" id="button-up">
                      <Link to={`/comments/${answer.answerid}`}>
                        <i className="fa fa-edit"></i> Comments</Link>

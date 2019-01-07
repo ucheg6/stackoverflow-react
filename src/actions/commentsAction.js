@@ -7,7 +7,6 @@ import {
 } from './types';
 
 import notify from '../helpers/notify';
-// import { fetchSingleQuestion } from './singleQuestionAction';
 
 /**
  * @description A function to dispatch an action on post comment success
@@ -100,7 +99,7 @@ export const postComment = (commentDetails, id) => {
          const { data: { message } } = response;
          notify.success(message);
           dispatch(postCommentAction({comment: commentInfo }));
-        //   dispatch(fetchSingleQuestion(id));
+          dispatch(fetchComments(id));
           
         }
       })

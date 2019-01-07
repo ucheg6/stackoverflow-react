@@ -37,7 +37,7 @@ class SingleQuestion extends Component {
               <div className="s-article-title" id="s-question_body">
                 {data && data.data && data.data[0].questionbody}
               </div>
-              {data && data.answers &&  <AnswersCard answers={data.answers}/> }
+              {data && data.answers &&  <AnswersCard answers={data.answers} questionid={id}/> }
               <AnswerBox questionid={id}/>
             </div>
           </div>

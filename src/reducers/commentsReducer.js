@@ -36,6 +36,8 @@ const commentsReducer = (state = initialState, action) => {
         case FETCH_COMMENT_FAILURE:
             return { ...state, error: action.payload, posting: false };
 
+        case 'UPDATE_COMMENT':
+            return { ...state, comments: [action.payload, ...state.comments]}
     }
     return state;
 
