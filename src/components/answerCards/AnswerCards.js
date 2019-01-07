@@ -3,7 +3,7 @@ import formatTime from '../../helpers/timeFormater';
 import { Link } from "react-router-dom";
 import Upvotes from './Upvotes';
 import Downvotes from './Downvotes';
-
+import AcceptAnswer from './AcceptAnswer';
 
 const AnswersCard = ({ answers, questionid }) => {
   
@@ -36,10 +36,7 @@ const AnswersCard = ({ answers, questionid }) => {
                      <Link to={`/comments/${answer.answerid}`}>
                        <i className="fa fa-edit"></i> Comments</Link>
                    </li>
-                   <li className="button" id="button-up">
-                    { answer.is_preferred ? <i style={{color: 'purple'}} className="fa fa-check-square"> accepted</i>
-                    : <i className="fa fa-check-square"> accept</i> }
-                   </li>
+                   <AcceptAnswer is_preferred={answer.is_preferred} answerid={answer.answerid} id={questionid}/>
                  </ul>
                </div>
                </div>

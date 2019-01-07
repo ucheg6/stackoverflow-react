@@ -7,8 +7,6 @@ class Downvotes extends Component {
   constructor(props) {
     super(props);
     const { downvotes } = this.props;
-    console.log(this.props)
-
     this.state = {
       downvotes,
     }
