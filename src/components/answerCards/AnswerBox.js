@@ -32,9 +32,9 @@ class Answer extends Component {
       <div>
         <ToastContainer />
         <div>
-          <textarea  value={this.state.answer} id="answerBody" name="answer" onChange={this.handleChange}
+          <textarea  value={this.state.answer}  id="answerBody" data-testid="changeAnswer" name="answer" onChange={this.handleChange}
            cols="20" className="form-input" rows="7" placeholder="Enter your answer here"></textarea>
-          <button className="search-btn fa fa-share-square " onClick={this.handlePostAnswer} id="submitAnswer" > Submit Answer</button>
+          <button className="search-btn fa fa-share-square " data-testid="postAnswer" onClick={this.handlePostAnswer} id="submitAnswer" > Submit Answer</button>
         </div>
       </div>
     )

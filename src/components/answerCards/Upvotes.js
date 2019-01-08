@@ -28,7 +28,7 @@ class Upvotes extends Component {
   render() {
     const { upvotes } = this.state;
     return (
-        <li className="button" id="button-up" onClick={this.handleUpvote} >
+        <li className="button" id="button-up" data-testid="upvote" onClick={this.handleUpvote} >
           <i className="fa fa-thumbs-up" id="upvoter"></i>
                      &nbsp; {upvotes}
          </li>

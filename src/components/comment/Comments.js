@@ -47,10 +47,11 @@ class Comments extends Component {
             <ToastContainer />
             <div className="">
               <div>
-                <textarea name="" id="commentBody"
+                <textarea name="" id="commentBody" data-testid="changeComment"
                 value={this.state.comment} name="comment" onChange={this.handleChange}
                 cols="20" className="form-input" rows="7" placeholder="Enter your comment here"></textarea>
-                <button className="search-btn fa fa-share-square " onClick={this.handlePostComment} id="submitComment" > Post Comment</button>
+                <button className="search-btn fa fa-share-square " data-testid="postComment"
+                onClick={this.handlePostComment} id="submitComment" > Post Comment</button>
               </div>
             </div>
           </div>

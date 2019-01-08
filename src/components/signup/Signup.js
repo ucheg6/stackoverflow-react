@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import { bindActionCreators } from 'redux';
-import { signup } from '../../actions/signupAction';
+import { signup } from '../../actions/signup';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../signin/signin.css';
@@ -56,21 +56,21 @@ class Signup extends Component {
                         <b>Email</b>
 
                         <input id="email" type="text" value={this.state.email}
-                            onChange={this.handleChange} placeholder="Enter Email" name="email" required />
+                            onChange={this.handleChange} data-testid="changesignup" placeholder="Enter Email" name="email" required />
                     </label>
 
                     <label>
                         <b>Password</b>
 
                         <input id="password" type="password" value={this.state.password}
-                            onChange={this.handleChange} placeholder="Enter Password" name="password" required />
+                            onChange={this.handleChange} data-testid="changesignup" placeholder="Enter Password" name="password" required />
                     </label>
 
                     <Link to='/signup'>Already have an account? LOGIN</Link>
 
                     <div className="clearfix">
 
-                        <button type="submit" id="register" onClick={this.handleSignup} className="signupbtn">Sign Up</button>
+                        <button type="submit" id="register" data-testid="signup" onClick={this.handleSignup} className="signupbtn">Sign Up</button>
                     </div>
 
                 </form>

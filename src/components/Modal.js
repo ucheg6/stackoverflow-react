@@ -38,23 +38,23 @@ class Modal extends Component {
          <ToastContainer />
           <div className="m-modal-content">
             <div className="m-modal-header">
-              <span className="m-close" onClick={this.closeModal}>&times;</span>
+              <span className="m-close" data-testid="close" onClick={this.closeModal}>&times;</span>
               <h3>Ask your Question</h3>
             </div>
             <div className="m-modal-body">
               <div className="m-edit_form">
                 <div className="m-form_group">
                   <label className="label">Question Title</label>
-                  <input id="m-questionTopic" type="text" placeholder="Question Title"
+                  <input id="m-questionTopic" data-testid="change" type="text" placeholder="Question Title"
                    value={this.state.topic} name="topic" onChange={this.handleChange}  />
                 </div>
                 <div className="m-form_group">
                   <label className="label">Question Body</label>
-                  <textarea id="m-questionBody" rows="10" cols="100" className="form-control"
+                  <textarea id="m-questionBody" data-testid="change" rows="10" cols="100" className="form-control"
                   value={this.state.question} name="question" onChange={this.handleChange}></textarea>
                 </div>
                 <button id="m-submitQuestion" className="m-btn m-btn-blue fa fa-share-square"
-                onClick={this.handlePostQuestion}> Post Question</button>
+                onClick={this.handlePostQuestion} data-testid="post"> Post Question</button>
               </div>
             </div>
           </div>

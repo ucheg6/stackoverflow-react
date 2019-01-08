@@ -29,7 +29,7 @@ class AcceptAnswer extends Component {
   render() {
     const { is_preferred } = this.state;
     return (
-         <li className="button" id="button-up" onClick={this.handleAcceptAnswer}>
+         <li className="button" id="button-up" data-testid="accept" onClick={this.handleAcceptAnswer}>
          { is_preferred ? <i style={{color: 'purple'}} className="fa fa-check-square"> accepted</i>
          : <i className="fa fa-check-square"> accept</i> }
         </li>
