@@ -15,7 +15,6 @@ class CommentCards extends Component {
     this.props.fetchComments(id);
   }
   render() {
-    console.log(this.props.postComments)
     return (
 
       <div>

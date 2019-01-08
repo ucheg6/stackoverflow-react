@@ -4,9 +4,6 @@ env:
 language: node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - "node_modules"
 before_script:
   - npm install -g codeclimate-test-reporter
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter

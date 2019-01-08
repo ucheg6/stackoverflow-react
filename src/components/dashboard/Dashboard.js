@@ -104,7 +104,7 @@ class Dashboard extends Component {
               <h1>Activity Feed</h1>
 
               <div className="action">
-                <button id="postQuestion" onClick={this.displayModal}>
+                <button id="postQuestion" data-testid="openDashboard" onClick={this.displayModal}>
                   Post Questions
           </button>
               </div>

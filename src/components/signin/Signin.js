@@ -38,13 +38,13 @@ class Signin extends Component {
           <h1> Log In</h1>
           <hr />
           <label><b>Email:</b></label>
-          <input id="email" onChange={this.handleChange} type="text" name="email" placeholder=" Email" />
+          <input id="email" onChange={this.handleChange} data-testid="changelogin" type="text" name="email" placeholder=" Email" />
           <label><b>Password:</b></label>
-          <input id="password" onChange={this.handleChange} type="password" name="password" placeholder="Password" />
+          <input id="password" onChange={this.handleChange} data-testid="changelogin" type="password" name="password" placeholder="Password" />
 
           <div>
           <Link to='/signup'>Don't have an account? Create One</Link>
-            <button id="loginUser" onClick={this.handleSignin} type="submit" className="signupbtn">LOG IN</button>
+            <button id="loginUser" onClick={this.handleSignin} data-testid="login" type="submit" className="signupbtn">LOG IN</button>
           </div>
 
 

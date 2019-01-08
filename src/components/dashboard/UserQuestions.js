@@ -69,7 +69,7 @@ class UserQuestions extends Component {
                       <ul className="action-buttons">
 
                         <li className="button" id="button-up">
-                          <a href="" onClick={() => this.deleteQuestion(event, questionid)}>
+                          <a href=""  onClick={() => this.deleteQuestion(event, questionid)} data-testid="del">
                             <i className="fa fa-trash"></i> Delete </a>
                         </li>
                         <li className="button" id="button-up">

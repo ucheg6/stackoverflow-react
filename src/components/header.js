@@ -26,7 +26,7 @@ class header extends Component {
           <h3 className="search-title">Have a Question?</h3>
           <p className="search-tag-line">Don't waste time just ask right away!</p>
           <form method="get" className="search-form clearfix" id="search-form">
-            <button id="postQuestion" onClick={this.displayModal}>
+            <button data-testid="open" id="postQuestion" onClick={this.displayModal}>
               Post Questions
           </button>    
           </form>
