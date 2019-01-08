@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from "react-router-dom";
+import image from '../../images/1.jpg';
 import './home.css';
 
 import Header from '../header';
@@ -52,7 +53,7 @@ class Home extends Component {
                                         </div>
 
                                         <div className="feed-user-pic">
-                                            <img className="pic" src="src/images/1.jpg" />
+                                            <img className="pic" src={image} />
                                         </div>
 
                                         <div className="post-body">
