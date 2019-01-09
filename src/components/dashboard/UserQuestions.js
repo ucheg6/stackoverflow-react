@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Link } from "react-router-dom";
 import { fetchUserQuestions, deleteUserQuestions } from '../../actions/userQuestionsAction';
 import formatTime from '../../helpers/timeFormater';
+import image from '../../images/1.jpg';
 
 class UserQuestions extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class UserQuestions extends Component {
                     </div>
 
                     <div className="p-feed-user-pic">
-                      <img className="pic" src="src/images/1.jpg" />
+                      <img className="pic" src={image} />
                     </div>
 
                     <div className="p-post-body">

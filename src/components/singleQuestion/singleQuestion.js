@@ -5,6 +5,7 @@ import { fetchSingleQuestion } from '../../actions/singleQuestionAction';
 import formatTime from '../../helpers/timeFormater';
 import AnswersCard from '../answerCards/AnswerCards';
 import AnswerBox from '../answerCards/AnswerBox';
+import image from '../../images/1.jpg';
 
 import './singleQuestion.css';
 
@@ -34,7 +35,7 @@ class SingleQuestion extends Component {
                 </span>
               </div>
               <div className="feed-user-pic">
-                <img className="pic" src="src/images/1.jpg" />
+                <img className="pic" src={image} />
               </div>
               <div className="s-article-title" id="s-question_body">
                 {data && data.data && data.data[0].questionbody}
