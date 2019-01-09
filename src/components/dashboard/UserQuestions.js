@@ -19,7 +19,6 @@ class UserQuestions extends Component {
   
   deleteQuestion(event, id) {
     event.preventDefault();
-    console.log(event, id)
     this.props.deleteUserQuestions(id);
   }
 

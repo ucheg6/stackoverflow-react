@@ -34,7 +34,7 @@ class MostPopular extends Component {
 
         <div id="mostAnswered">
           {
-            this.props.popularQuestions.slice(0,7).map((questions) => {
+            this.props.popularQuestions.slice(0,5).map((questions) => {
 
               const { questionid, questiontopic, answersnumber, questionbody } = questions
               return (
