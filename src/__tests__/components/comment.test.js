@@ -11,7 +11,7 @@ afterEach(cleanup);
 describe('Comments component', () => {
     const match = {
         params: {
-          slug: 'dummy-slug'
+          id: '67'
         }
     }
   it('should render without crashing', () => {

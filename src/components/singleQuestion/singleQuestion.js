@@ -18,8 +18,6 @@ class SingleQuestion extends Component {
 
   render() {
     const { data } = this.props.singleQuestion;
-    const { fetching } = this.props;
-    console.log(fetching);
     const id = data && data.data && data.data[0].questionid
 
     return (

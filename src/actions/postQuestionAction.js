@@ -6,7 +6,7 @@ import {
 } from './types';
 import notify from '../helpers/notify';
 import { fetchUserQuestions } from './userQuestionsAction';
-
+import { fetchRecentQuestions } from './recentQuestionsAction'
 /**
  * @description A function to dispatch an action on post question success
  * 
@@ -100,9 +100,11 @@ export const postQuestion = (questionDetails) => {
         dispatch(requestPostQuestion({ isRequesting: false }));
         if (response) {
          const { data: { message } } = response;
+         console.log(response)
          notify.success(message);
           dispatch(postQuestionAction({ question: questionInfo }));
           dispatch(fetchUserQuestions());
+          dispatch(fetchRecentQuestions());
           
           
         }

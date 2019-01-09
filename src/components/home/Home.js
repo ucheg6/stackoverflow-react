@@ -34,7 +34,7 @@ class Home extends Component {
                     <div className="feed">
 
                         {
-                           this.props.recentQuestions.slice(0,7).map((questions) => {
+                           this.props.recentQuestions.slice(0,5).map((questions) => {
 
                                 const { questionid, userid, fullname, questiontopic, questionbody, created_at } = questions
 

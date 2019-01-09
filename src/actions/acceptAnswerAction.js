@@ -70,7 +70,6 @@ export const acceptAnswer = (id, answerid) => {
         }
       })
       .then(response => {
-        dispatch(acceptAnswerAction({ isRequesting: false }));
       })
       .catch(error => {
         const { response: { data: { message } } } = error;
